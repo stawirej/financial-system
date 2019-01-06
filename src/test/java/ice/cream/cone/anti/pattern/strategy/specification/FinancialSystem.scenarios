@@ -1,0 +1,24 @@
+Story: Financial System
+	As a customer of Financial System
+	I want to give rise to employee
+	So that he will be happier and don't leave company
+
+	Scenario: give rise for regular employee
+		Given regular employee with salary 1000
+		When rise given
+		Then employee salary is 1100
+
+	Scenario: give rise for manager employee
+    		Given manager employee with salary 1000
+    		When rise given
+    		Then employee salary is 1300
+
+    Scenario: give rise for vp employee
+        		Given vp employee with salary 1000
+        		When rise given
+        		Then employee salary is 1500
+
+    Scenario: report error when give rise for not supported employee
+    		Given contractor employee with salary 1000
+    		When rise given
+    		Then error is reported

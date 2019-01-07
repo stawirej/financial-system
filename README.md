@@ -43,7 +43,7 @@
   --data '{
   "id": <EMPLOYEE_ID>,
   "type": "<EMPLOYEE_TYPE>",
-  "salary": \<SALARY>
+  "salary": <SALARY>
 }'
 
 #### Request example

@@ -8,7 +8,7 @@
 <body>
 <h1>Add Employee</h1>
 
-<form th:action="@{/add-employee}" th:object="${EmployeeRepresentation}" method="post">
+<form th:action="@{/add-employee}" th:object="${EmployeeRepresentation}" method="post" id="addEmployeeForm">
     Id<br>
     <input type="text" id="id" name="id"/>
     <br>Type<br>

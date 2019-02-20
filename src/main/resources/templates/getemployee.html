@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<h1>Add Employee</h1>
+<h1>Get Employee</h1>
 
-<form th:action="@{/get-employee}" th:object="${EmployeeId}" method="post">
+<form th:action="@{/get-employee}" th:object="${EmployeeId}" method="post" id="getEmployeeForm">
     Id<br>
     <input type="text" id="id" name="id"/>
     <br>

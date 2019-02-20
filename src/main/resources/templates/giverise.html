@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Give Rise</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Give Rise</h1>
+
+<form th:action="@{/give-rise}" th:object="${EmployeeId}" method="post">
+    Id<br>
+    <input type="text" id="id" name="id"/>
+    <br>
+    <button type="submit">Give Rise</button>
+</form>
+<br>
+<input type="button" onclick="location.href='/index'" value="Home">
+</body>
+</html>

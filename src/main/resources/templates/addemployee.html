@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Employee</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Add Employee</h1>
+
+<form th:action="@{/add-employee}" th:object="${EmployeeRepresentation}" method="post">
+    Id<br>
+    <input type="text" id="id" name="id"/>
+    <br>Type<br>
+    <select name="type" id="type">
+        <option value="REGULAR">Regular</option>
+        <option value="MANAGER">Manager</option>
+        <option value="VP">VP</option>
+        <option value="CONTRACTOR">Contractor</option>
+    </select>
+    <br>Salary<br>
+    <input type="text" id="salary" name="salary"/>
+    <br>
+    <button type="submit">Add Employee</button>
+</form>
+<br>
+<input type="button" onclick="location.href='/index'" value="Home">
+
+</body>
+</html>

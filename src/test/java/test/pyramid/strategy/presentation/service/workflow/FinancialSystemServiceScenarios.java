@@ -1,11 +1,11 @@
-package test.pyramid.strategy.gui.workflow;
+package test.pyramid.strategy.presentation.service.workflow;
 
 import application.FinancialSystem;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import test.pyramid.strategy.application.FinancialSystemRiseScenarios;
-import test.pyramid.strategy.gui.automatization.FinancialSystemServiceAgent;
+import test.pyramid.strategy.presentation.service.automatization.FinancialSystemServiceAgent;
 
 class FinancialSystemServiceScenarios {
 

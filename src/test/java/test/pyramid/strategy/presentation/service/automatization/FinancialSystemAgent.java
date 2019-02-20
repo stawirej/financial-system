@@ -1,4 +1,4 @@
-package test.pyramid.strategy.gui.automatization;
+package test.pyramid.strategy.presentation.service.automatization;
 
 import application.FinancialSystem;
 

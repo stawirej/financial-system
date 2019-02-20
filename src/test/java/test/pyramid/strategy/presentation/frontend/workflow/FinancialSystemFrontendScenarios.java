@@ -2,14 +2,39 @@ package test.pyramid.strategy.presentation.frontend.workflow;
 
 import static org.assertj.core.api.BDDAssertions.then;
 
+import application.FinancialSystem;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import test.pyramid.strategy.application.FinancialSystemRiseScenarios;
+import test.pyramid.strategy.presentation.frontend.automatization.FinancialSystemServiceAgent;
 import java.util.concurrent.TimeUnit;
 
 class FinancialSystemFrontendScenarios {
+
+    private FinancialSystem financialSystem;
+    private FinancialSystemRiseScenarios financialSystemRiseScenarios;
+
+    @BeforeEach
+    void beforeEach() {
+        financialSystem = new test.pyramid.strategy.presentation.frontend.automatization.FinancialSystemServiceAgent();
+        financialSystemRiseScenarios = new FinancialSystemRiseScenarios();
+        financialSystemRiseScenarios.setFinancialSystem(financialSystem);
+    }
+
+    @AfterEach
+    void afterEach() {
+        ((FinancialSystemServiceAgent)financialSystem).close();
+    }
+
+    @Test
+    void updateSalaryForRegularEmployee() {
+        financialSystemRiseScenarios.updateSalaryForRegularEmployee();
+    }
 
     @Test
     void foo() {
@@ -21,6 +46,7 @@ class FinancialSystemFrontendScenarios {
         WebDriver driver = new ChromeDriver();
 
         // Navigate to a web page
+
         driver.get("http://localhost:8085/add-employee-page");
 
         // Perform actions on HTML elements, entering text and submitting the form

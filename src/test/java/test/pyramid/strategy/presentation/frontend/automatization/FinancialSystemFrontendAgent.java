@@ -7,7 +7,6 @@ import domain.salary.Money;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 
 public final class FinancialSystemFrontendAgent implements FinancialSystemAgent {
 
@@ -37,21 +36,17 @@ public final class FinancialSystemFrontendAgent implements FinancialSystemAgent 
         id.sendKeys(String.valueOf(employee.id()));
         salary.sendKeys(employee.salary().toString());
         addEmployeeForm.submit();
-
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @Override
     public Optional<Employee> getEmployeeBy(long id) {
         driver.get(GET_EMPLOYEE_URL);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
         var employeeId = driver.findElement(By.name("id"));
         var getEmployeeForm = driver.findElement(By.id("getEmployeeForm"));
 
         employeeId.sendKeys(String.valueOf(id));
         getEmployeeForm.submit();
-
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         var pageSource = driver.getPageSource();
         var employee = employeeFromPageSource(pageSource);
@@ -67,8 +62,6 @@ public final class FinancialSystemFrontendAgent implements FinancialSystemAgent 
 
         employeeId.sendKeys(String.valueOf(id));
         giveRiseForm.submit();
-
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @Override

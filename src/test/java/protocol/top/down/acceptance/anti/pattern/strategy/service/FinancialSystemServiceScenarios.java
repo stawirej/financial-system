@@ -28,10 +28,14 @@ final class FinancialSystemServiceScenarios {
     @Test
     void updateSalaryForRegularEmployee() throws IOException {
         // Given
-        applicationUnderTest.getHttpClient().requestSpec(
-            requestSpec -> requestSpec
-                .body(body -> body.type("application/json").text("{\"id\": 1,\"type\": \"regular\",\"salary\": 1000}")))
-                            .post("/employee");
+        applicationUnderTest
+            .getHttpClient()
+            .requestSpec(
+                requestSpec -> requestSpec
+                    .body(body -> body
+                        .type("application/json")
+                        .text("{\"id\": 1,\"type\": \"regular\",\"salary\": 1000}")))
+            .post("/employee");
 
         // When
         applicationUnderTest.getHttpClient().put("/employee/1/salary");

@@ -3,12 +3,10 @@ package test.pyramid.strategy.presentation.frontend.workflow;
 import application.FinancialSystem;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import test.pyramid.strategy.application.FinancialSystemRiseScenarios;
 import test.pyramid.strategy.presentation.frontend.automatization.FinancialSystemFrontendAgent;
 
-//@Disabled
 class FinancialSystemFrontendScenarios {
 
     private FinancialSystem financialSystem;

@@ -2,16 +2,16 @@ package infrastructure;
 
 import domain.employee.Employee;
 import domain.ports.Repository;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Simulation of slow production repository.
+ */
 public final class ProductionRepository implements Repository {
 
-    private final Map<Long, Employee> employees = new HashMap<>();
+    private final InMemoryRepository inMemoryRepository = new InMemoryRepository();
 
     private ProductionRepository() {
-
     }
 
     public static ProductionRepository newInstance() {
@@ -20,12 +20,23 @@ public final class ProductionRepository implements Repository {
 
     @Override
     public Optional<Employee> getEmployeeBy(long id) {
-        System.out.println("ProductionRepository.getEmployeeBy");
-        return Optional.ofNullable(employees.get(id));
+        try {
+            Thread.sleep(2000);
+            System.out.println("ProductionRepository.getEmployeeBy");
+            return inMemoryRepository.getEmployeeBy(id);
+        } catch (InterruptedException exception) {
+            throw new RuntimeException("Production database failed!");
+        }
     }
 
     @Override
     public void save(Employee employee) {
-        employees.put(employee.id(), employee);
+        try {
+            System.out.println("ProductionRepository.save");
+            Thread.sleep(2000);
+            inMemoryRepository.save(employee);
+        } catch (InterruptedException exception) {
+            throw new RuntimeException("Production database failed!");
+        }
     }
 }

@@ -15,19 +15,25 @@
 ## Requirements
 * Java 11
 * Maven 3.6.0
+* Windows [GitBash](https://gitforwindows.org) 
 
 ## Build
 * mvn clean install
 
+## Running all tests
+* runAllTestsWindows.sh
+
 # Usage
 ## Running service
-###### Run service
-* java -jar ./target/financial-service-jar-with-dependencies.jar
-
-###### Service will be available at url:
+###### Ratpack webservice
+* runRatpackServiceWindows.sh
 * http://localhost:5050
 
-# API
+###### Spring Boot service 
+* runSpringBootServiceWindows.sh
+* http://localhost:8085
+
+# Ratpack API service
 
 ### Adding employee
 #### Available employee types:

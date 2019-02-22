@@ -14,7 +14,7 @@ LOG_FILE="log.txt"
 # Build application. Compile but not run tests.
 #
 echo "Building application ..."
-JAVA_HOME=${JDK_PATH} mvn install -DskipTests
+JAVA_HOME=${JDK_PATH} mvn clean install -DskipTests
 
 #
 # Run Spring Boot service in background.
@@ -33,7 +33,7 @@ echo "Starting Spring Boot Financial System (PID = ${FINANCIAL_SYSTEM_PID}) ..."
 # Run all tests.
 #
 echo "Running all tests ..."
-JAVA_HOME=${JDK_PATH} mvn clean install
+JAVA_HOME=${JDK_PATH} mvn test
 
 #
 # Cleanup.

@@ -13,7 +13,7 @@
 ![test pyramid](https://abstracta.us/wp-content/uploads/2015/10/Screen-Shot-2017-03-27-at-6.21.09-PM-min-1.png)
 
 ## Requirements
-* Java 11
+* Java 12
 * Maven 3.6.0
 * Windows [GitBash](https://gitforwindows.org) 
 
@@ -21,16 +21,18 @@
 * mvn clean install
 
 ## Running all tests
-* runAllTestsWindows.sh
+* runAllTestsWindows.sh (set correct JAVA_HOME inside script)
 
 # Usage
 ## Running service
 ###### Ratpack webservice
-* runRatpackServiceWindows.sh
+* runRatpackServiceWindows.sh (set correct JAVA_HOME inside script)
+* runRatpackServiceLinux.sh
 * http://localhost:5050
 
 ###### Spring Boot service 
-* runSpringBootServiceWindows.sh
+* runSpringBootServiceWindows.sh (set correct JAVA_HOME inside script)
+* runSpringBootServiceLinux.sh
 * http://localhost:8085
 
 # Ratpack API service

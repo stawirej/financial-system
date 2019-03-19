@@ -35,7 +35,7 @@ final class SimpleFinancialSystem implements FinancialSystem {
         if (foundEmployee.isEmpty()) {
             repository.save(employee);
         } else {
-            throw new EmployeeAlreadyExists("Employee newInstance id: " + employee.id() + " already exists!");
+            throw new EmployeeAlreadyExists("Employee with id: " + employee.id() + " already exists!");
         }
     }
 
@@ -57,6 +57,6 @@ final class SimpleFinancialSystem implements FinancialSystem {
     private Employee getEmployeeFromRepositoryBy(long id) {
         return repository
             .getEmployeeBy(id)
-            .orElseThrow(() -> new NotExistingEmployee("Employee newInstance id: " + id + " does not exists!"));
+            .orElseThrow(() -> new NotExistingEmployee("Employee with id: " + id + " does not exists!"));
     }
 }

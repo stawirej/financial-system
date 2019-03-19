@@ -37,6 +37,6 @@ final class FinancialSystemAddEmployeeScenarios {
         // Then
         assertThatThrownBy(() -> financialSystem.add(employee().withId(1L).asManager().withSalary(5000)))
             .isInstanceOf(EmployeeAlreadyExists.class)
-            .hasMessage("Employee newInstance id: 1 already exists!");
+            .hasMessage("Employee with id: 1 already exists!");
     }
 }

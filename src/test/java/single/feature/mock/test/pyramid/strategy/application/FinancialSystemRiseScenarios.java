@@ -41,6 +41,6 @@ final class FinancialSystemRiseScenarios {
     void reportErrorForNonExistingEmployee() {
         assertThatThrownBy(() -> financialSystem.giveRise(1L))
             .isInstanceOf(NotExistingEmployee.class)
-            .hasMessage("Employee newInstance id: 1 does not exists!");
+            .hasMessage("Employee with id: 1 does not exists!");
     }
 }

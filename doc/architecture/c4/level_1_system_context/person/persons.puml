@@ -1,0 +1,8 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Context.puml
+
+!function humanResourcesPerson()
+    Person(humanResources, "Human Resources", "Person responsible for managing employees.")
+!endfunction
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+
+!function webApplicationContainer()
+    Container(webApplication, "Web Application", "Java, Spring", "Provides internet functionality to human resources for managing employees via web browser.")
+!endfunction
+
+!function apiApplicationContainer()
+    Container(apiApplication, "API Application", "Java, Ratpack", "Provides internet functionality to human resources for managing employees via JSON/HTTP API.")
+!endfunction
+
+@enduml

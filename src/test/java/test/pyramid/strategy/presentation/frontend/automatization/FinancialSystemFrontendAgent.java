@@ -14,9 +14,8 @@ public final class FinancialSystemFrontendAgent implements FinancialSystemAgent 
     private static final String GET_EMPLOYEE_URL = "http://localhost:8085/get-employee-page";
     private static final String GIVE_RISE_URL = "http://localhost:8085/give-rise-page";
 
-    private static final String WEBDRIVER_PATH = System.getProperty("user.dir") + "\\src\\test\\java\\test\\pyramid"
-                                                 + "\\strategy\\presentation\\frontend\\automatization\\resources"
-                                                 + "\\chromedriver.exe";
+    private static final String WEBDRIVER_PATH = System.getProperty("user.dir") + "/src/test/java/test/pyramid"
+                                                + "/strategy/presentation/frontend/automatization/resources/chromedriver";
     private final ChromeDriver driver;
 
     public FinancialSystemFrontendAgent() {

@@ -3,6 +3,7 @@ package test.pyramid.strategy.presentation.frontend.automatization;
 import domain.employee.Employee;
 import domain.employee.EmployeeBuilder;
 import domain.employee.EmployeeType;
+import domain.exceptions.NotSupportedEmployee;
 import domain.salary.Money;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,6 +34,7 @@ public final class FinancialSystemFrontendAgent implements FinancialSystemAgent 
         var addEmployeeForm = driver.findElement(By.id("addEmployeeForm"));
 
         id.sendKeys(String.valueOf(employee.id()));
+        type.sendKeys(String.valueOf(employee.type()));
         salary.sendKeys(employee.salary().toString());
         addEmployeeForm.submit();
     }
@@ -61,6 +63,11 @@ public final class FinancialSystemFrontendAgent implements FinancialSystemAgent 
 
         employeeId.sendKeys(String.valueOf(id));
         giveRiseForm.submit();
+
+        var pageSource = driver.getPageSource();
+        if (notSupportedEmployeeError(pageSource)) {
+            throw new NotSupportedEmployee(String.format("Not supported employee with id: %s", id));
+        }
     }
 
     @Override
@@ -87,5 +94,10 @@ public final class FinancialSystemFrontendAgent implements FinancialSystemAgent 
                               .withId(returnedEmployeeId)
                               .withType(returnedEmployeeType)
                               .withSalary(returnedSalary);
+    }
+
+    private boolean notSupportedEmployeeError(String pageSource) {
+
+        return pageSource.contains("Not supported employee");
     }
 }

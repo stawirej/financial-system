@@ -66,7 +66,7 @@ public final class FinancialSystemFrontendAgent implements FinancialSystemAgent 
         giveRiseForm.submit();
 
         var pageSource = driver.getPageSource();
-        if (notSupportedEmployeeError(pageSource)) {
+        if (notSupportedEmployeeErrorOn(pageSource)) {
             throw new NotSupportedEmployee(String.format("Not supported employee with id: %s", id));
         }
     }
@@ -97,7 +97,7 @@ public final class FinancialSystemFrontendAgent implements FinancialSystemAgent 
                               .withSalary(returnedSalary);
     }
 
-    private boolean notSupportedEmployeeError(String pageSource) {
+    private boolean notSupportedEmployeeErrorOn(String pageSource) {
 
         return pageSource.contains("Not supported employee");
     }

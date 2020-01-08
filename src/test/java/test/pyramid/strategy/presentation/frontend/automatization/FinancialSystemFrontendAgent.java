@@ -22,6 +22,7 @@ public final class FinancialSystemFrontendAgent implements FinancialSystemAgent 
     public FinancialSystemFrontendAgent() {
         System.setProperty("webdriver.chrome.driver", WEBDRIVER_PATH);
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
     }
 
     @Override

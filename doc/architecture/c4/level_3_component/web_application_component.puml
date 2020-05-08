@@ -30,13 +30,13 @@ Boundary(webApplicationContainerBoundary, "Web Application", "Container") {
 
     }
 }
-Rel_R(financialSystem, employee, "Uses")
-Rel_R(financialSystem, exceptions, "Uses")
-Rel_R(financialSystem, ports, "Uses")
-Rel_R(financialSystem, salary, "Uses")
+Rel(financialSystem, employee, "Uses")
+Rel(financialSystem, exceptions, "Uses")
+Rel(financialSystem, ports, "Uses")
+Rel(financialSystem, salary, "Uses")
 
 Rel(humanResources, springComponent, "Makes API calls to", "JSON/HTTP")
 Rel(springComponent, financialSystem, "Uses", "Java")
 Rel_L(springComponent, springTemplates, "Uses")
-Rel(financialSystem, database, "Reads and writes employee information", "JDBC")
+Rel(ports, database, "Reads and writes employee information", "JDBC")
 @enduml

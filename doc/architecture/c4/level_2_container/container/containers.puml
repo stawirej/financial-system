@@ -1,5 +1,5 @@
 @startuml
-!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml
+!include https://raw.githubusercontent.com/stawirej/C4-PlantUML/master/C4_Container.puml
 
 !procedure webApplicationContainer()
     Container(webApplication, "Web Application", "Java, Spring", "Provides internet functionality to human resources for managing employees via web browser.")

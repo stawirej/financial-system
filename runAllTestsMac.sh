@@ -3,7 +3,7 @@
 #
 # Set environment variables.
 #
-JDK_PATH="/Users/stawirej/.sdkman/candidates/java/12.0.2-open"
+JDK_PATH="/Users/stawirej/.sdkman/candidates/java/current"
 LOG_FILE="log.txt"
 
 #

@@ -7,7 +7,7 @@
 #
 # Set environment variables.
 #
-JDK_PATH="c:\\Program Files\\Java\\jdk-12\\"
+JDK_PATH="c:\\Program Files\\Java\\jdk-16\\"
 LOG_FILE="log.txt"
 
 #

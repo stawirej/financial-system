@@ -13,8 +13,11 @@ import java.util.Map;
 @Controller
 public class FinancialSystemController {
 
-    @Autowired
-    private FinancialSystem financialSystem;
+    private final FinancialSystem financialSystem;
+
+    public FinancialSystemController(final FinancialSystem financialSystem) {
+        this.financialSystem = financialSystem;
+    }
 
     @RequestMapping("/index")
     public String viewHomePage() {

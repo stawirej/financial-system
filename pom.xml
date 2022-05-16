@@ -16,7 +16,7 @@
         <assertj.core.version>3.20.2</assertj.core.version>
         <junit.version>5.8.0-RC1</junit.version>
         <selenium.java.version>4.0.0-rc-1</selenium.java.version>
-        <ratpack.version>1.10.0-milestone-4</ratpack.version>
+        <ratpack.version>2.0.0-rc-1</ratpack.version>
         <spring.boot.version>2.6.0-M2</spring.boot.version>
         <spring.boot.maven.plugin.version>2.4.5</spring.boot.maven.plugin.version>
         <java.release>16</java.release>

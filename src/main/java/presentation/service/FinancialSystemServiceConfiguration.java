@@ -3,7 +3,7 @@ package presentation.service;
 import application.FinancialSystemConfiguration;
 import domain.ports.Repository;
 import infrastructure.InMemoryRepository;
-import ratpack.server.RatpackServer;
+import ratpack.core.server.RatpackServer;
 
 public final class FinancialSystemServiceConfiguration {
 

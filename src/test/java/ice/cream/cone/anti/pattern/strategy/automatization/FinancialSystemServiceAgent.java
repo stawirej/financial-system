@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import domain.employee.Employee;
 import io.netty.handler.codec.http.HttpStatusClass;
 import presentation.service.dto.EmployeeRepresentation;
-import ratpack.http.Status;
+import ratpack.core.http.Status;
 import ratpack.test.MainClassApplicationUnderTest;
 import java.io.IOException;
 import java.util.Optional;

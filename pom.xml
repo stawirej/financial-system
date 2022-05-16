@@ -17,9 +17,9 @@
         <junit.version>5.9.0-M1</junit.version>
         <selenium.java.version>4.1.4</selenium.java.version>
         <ratpack.version>2.0.0-rc-1</ratpack.version>
-        <spring.boot.version>2.6.0-M2</spring.boot.version>
-        <spring.boot.maven.plugin.version>2.4.5</spring.boot.maven.plugin.version>
-        <java.release>16</java.release>
+        <spring.boot.version>2.6.7</spring.boot.version>
+        <spring.boot.maven.plugin.version>2.6.7</spring.boot.maven.plugin.version>
+        <java.release>17</java.release>
     </properties>
 
     <dependencies>

@@ -8,9 +8,12 @@ import static test.pyramid.strategy.domain.assemblers.employee.EmployeeAssembler
 import application.FinancialSystem;
 import domain.exceptions.EmployeeAlreadyExists;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 
-final class FinancialSystemAddEmployeeScenarios {
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+final class FinancialSystem_add_employee_scenarios {
 
     private FinancialSystem financialSystem;
 
@@ -20,7 +23,7 @@ final class FinancialSystemAddEmployeeScenarios {
     }
 
     @Test
-    void addNonExistingEmployee() {
+    void Add_non_existing_employee() {
         // When
         financialSystem.add(employee().withId(1L).asManager().withSalary(5000));
 
@@ -30,7 +33,7 @@ final class FinancialSystemAddEmployeeScenarios {
     }
 
     @Test
-    void reportErrorOnAddingExistingEmployee() {
+    void Report_error_on_adding_existing_employee() {
         // Given
         financialSystem.add(employee().withId(1L).asManager().withSalary(5000));
 

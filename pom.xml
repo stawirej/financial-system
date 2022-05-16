@@ -131,6 +131,7 @@
                     </systemProperties>
                     <includes>
                         <include>**/*Scenarios.java</include>
+                        <include>**/*scenarios.java</include>
                     </includes>
                 </configuration>
             </plugin>

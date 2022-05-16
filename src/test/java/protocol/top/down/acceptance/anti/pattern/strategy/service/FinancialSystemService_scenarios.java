@@ -6,12 +6,15 @@ import static test.pyramid.strategy.domain.assemblers.employee.EmployeeAssembler
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 import presentation.service.dto.EmployeeRepresentation;
 import ratpack.test.MainClassApplicationUnderTest;
 import java.io.IOException;
 
-final class FinancialSystemServiceScenarios {
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+final class FinancialSystemService_scenarios {
 
     private MainClassApplicationUnderTest applicationUnderTest;
 
@@ -26,7 +29,7 @@ final class FinancialSystemServiceScenarios {
     }
 
     @Test
-    void updateSalaryForRegularEmployee() throws IOException {
+    void Update_salary_for_regular_employee() throws IOException {
         // Given
         applicationUnderTest
             .getHttpClient()

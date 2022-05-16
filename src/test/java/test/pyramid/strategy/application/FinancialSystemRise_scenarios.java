@@ -8,9 +8,12 @@ import static test.pyramid.strategy.domain.assemblers.employee.EmployeeAssembler
 import application.FinancialSystem;
 import domain.exceptions.NotExistingEmployee;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 
-public class FinancialSystemRiseScenarios {
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+public class FinancialSystemRise_scenarios {
 
     protected FinancialSystem financialSystem;
 
@@ -25,7 +28,7 @@ public class FinancialSystemRiseScenarios {
     }
 
     @Test
-    public void updateSalaryForRegularEmployee() {
+    public void Update_salary_for_regular_employee() {
         // Given
         financialSystem.add(employee().withId(1L).asRegular().withSalary(1000));
 
@@ -38,7 +41,7 @@ public class FinancialSystemRiseScenarios {
     }
 
     @Test
-    void reportErrorForNonExistingEmployee() {
+    void Report_error_for_non_existing_employee() {
         assertThatThrownBy(() -> financialSystem.giveRise(1L))
             .isInstanceOf(NotExistingEmployee.class)
             .hasMessage("Employee with id: 1 does not exists!");

@@ -8,7 +8,7 @@ import application.FinancialSystem;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-final class FinancialSystemGetEmployeeScenarios {
+final class FinancialSystem_get_employee_scenarios {
 
     private FinancialSystem financialSystem;
 
@@ -18,7 +18,7 @@ final class FinancialSystemGetEmployeeScenarios {
     }
 
     @Test
-    void getExistingEmployee() {
+    void Get_existing_employee() {
         // Given
         financialSystem.add(employee().withId(2L).asContractor().withSalary(3000));
 
@@ -30,7 +30,7 @@ final class FinancialSystemGetEmployeeScenarios {
     }
 
     @Test
-    void returnEmptyForNonExistingEmployee() {
+    void Return_empty_for_non_existing_employee() {
         // When
         var employee = financialSystem.getEmployeeBy(2L);
 

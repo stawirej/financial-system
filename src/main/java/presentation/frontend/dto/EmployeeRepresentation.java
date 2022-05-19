@@ -4,9 +4,7 @@ import domain.employee.Employee;
 import domain.employee.EmployeeBuilder;
 import domain.employee.EmployeeType;
 import domain.salary.Money;
-import org.springframework.stereotype.Component;
 
-@Component
 public class EmployeeRepresentation {
 
     private long id;

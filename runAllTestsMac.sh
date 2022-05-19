@@ -18,9 +18,7 @@ JAVA_HOME=${JDK_PATH} mvn clean install -DskipTests
 #
 JAVA_HOME=${JDK_PATH} mvn spring-boot:run > ${LOG_FILE} &
 
-# Get PID of last background process.
-FINANCIAL_SYSTEM_PID=$!
-echo "Starting Spring Boot Financial System (PID = ${FINANCIAL_SYSTEM_PID}) ..."
+echo "Starting Spring Boot Financial System..."
 
 # Wait for Spring Boot service to start.
 ( tail -f -n0 log.txt & ) | grep -q "Started FinancialSystemService"
@@ -35,6 +33,13 @@ JAVA_HOME=${JDK_PATH} mvn test
 # Cleanup.
 #
 echo "Cleanup"
-disown ${FINANCIAL_SYSTEM_PID}
-kill -9 ${FINANCIAL_SYSTEM_PID}
+
+# Find all PIDs for financial system
+for PID in $(ps -A | grep financial | awk '{print $1}');
+  do
+     echo "Welcome $PID times"
+     disown ${PID}
+     kill -9 ${PID}
+ done
+
 rm ${LOG_FILE}

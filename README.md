@@ -15,7 +15,16 @@
 ## Requirements
 * Java 16
 * Maven 3.6.0
-* Windows [GitBash](https://gitforwindows.org) 
+* Windows [GitBash](https://gitforwindows.org)
+* Download [chromedriver](https://chromedriver.chromium.org/downloads) matching your current chrome browser version.
+
+## Mac
+* Verify chromedriver
+```bash
+cd ./src/test/java/test/pyramid/strategy/presentation/frontend/automatization/resources/
+chmod 777 ./chromedriver
+xattr -d com.apple.quarantine chromedriver
+```
 
 ## Build
 * mvn clean install

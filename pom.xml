@@ -13,9 +13,9 @@
         <maven.surefire.plugin.version>3.0.0-M3</maven.surefire.plugin.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
         <maven.assembly.plugin.version>3.1.1</maven.assembly.plugin.version>
-        <assertj.core.version>3.22.0</assertj.core.version>
+        <assertj.core.version>3.23.1</assertj.core.version>
         <junit.version>5.9.0-M1</junit.version>
-        <selenium.java.version>4.1.4</selenium.java.version>
+        <selenium.java.version>4.2.2</selenium.java.version>
         <ratpack.version>2.0.0-rc-1</ratpack.version>
         <spring.boot.version>2.6.7</spring.boot.version>
         <spring.boot.maven.plugin.version>2.6.7</spring.boot.maven.plugin.version>
@@ -72,6 +72,12 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>nl.jqno.equalsverifier</groupId>
+            <artifactId>equalsverifier</artifactId>
+            <version>3.10</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

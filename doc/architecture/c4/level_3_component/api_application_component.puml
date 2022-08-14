@@ -1,5 +1,5 @@
 @startuml
-!include https://raw.githubusercontent.com/stawirej/C4-PlantUML/master/C4_Component.puml
+!include ../C4_Component.puml
 !include ../level_1_system_context/person/persons.puml
 !include ../level_1_system_context/database/databases.puml
 !include ../level_2_container/container/containers.puml

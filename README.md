@@ -92,3 +92,18 @@ xattr -d com.apple.quarantine chromedriver
 #### Request example
 curl --request PUT \
   --url http://localhost:5050/employee/1/salary
+
+# Architecture
+
+## System context diagram
+![](doc/architecture/c4/level_1_system_context/financial_system_context.puml.png)
+
+## Container diagram
+
+![](doc/architecture/c4/level_2_container/financial_system_container.png)
+
+## Component diagram
+
+![](doc/architecture/c4/level_3_component/api_application_component.png)
+
+![](doc/architecture/c4/level_3_component/web_application_component.png)

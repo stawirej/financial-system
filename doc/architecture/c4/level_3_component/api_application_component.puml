@@ -8,9 +8,7 @@ title Component Diagram for Financial System
 
 humanResourcesPerson()
 
-Boundary(infrastructureLayer, "infrastructure", "Layer") {
-    databaseSystem()
-}
+databaseSystem()
 
 Boundary(apiApplicationContainerBoundary, "Api Application", "Container") {
     Boundary(presentationLayer, "presentation", "Layer") {
@@ -28,7 +26,13 @@ Boundary(apiApplicationContainerBoundary, "Api Application", "Container") {
         Component(salary, "salary", "Java", "Business rules for calculating salaries.")
 
     }
+
+    Boundary(infrastructure, "infrastructure", "Layer") {
+        Component_Ext(postgresAdapter, "postgress-adapter", "Java", "<<TO BE IMPLEMENTED>> Adapter for Postgres database.")
+        Component(inMemoryRepository, "In memory repository", "Java", "In memory repository. Fake for testing and demo purposes.")
+    }
 }
+
 Rel(financialSystem, employee, "Uses")
 Rel(financialSystem, exceptions, "Uses")
 Rel(financialSystem, ports, "Uses")
@@ -36,5 +40,10 @@ Rel(financialSystem, salary, "Uses")
 
 Rel(humanResources, ratpackComponent, "Makes API calls to", "JSON/HTTP")
 Rel(ratpackComponent, financialSystem, "Uses", "Java")
-Rel(ports, database, "Reads and writes employee information", "JDBC")
+
+Rel_U(postgresAdapter, ports, "Implements", "Java")
+
+Rel(inMemoryRepository, ports, "Implements", "Java")
+Rel(postgresAdapter, database, "Reads and writes employee information", "JDBC")
+
 @enduml
